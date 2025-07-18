@@ -89,6 +89,16 @@
 
 // ......................................................................
 
+// 1. Variables and Declarations
+// Common Confusions?
+
+// Why var leaks outside block but let doesn't?
+// var keyword hamesha sirf function ki respect karta hai isi wajah se var function scoped hai aur let & const har block
+// "{}"/ curly braces ki respect karte hain isi wajah se let & const block scoped hain
+
+// Why const allows to changing object properties?
+// const keyword mein reassingment allowed nahi hai, but object ki key ko update/modify liya jaa sakta hai
+
 //////////////////////////////////////////////////////////
 
 // ...............................................
@@ -159,11 +169,11 @@ let value1 = 7;
 let value2 = "2";
 
 // typeof: yeh aik operator hai, jo k value ka type batata hai
-console.log(typeof value1);
-console.log(typeof value2);
+// console.log(typeof value1);
+// console.log(typeof value2);
 
-console.log(value1 - value2); // is ne automatically value to coerce(convert) kardiya hai
-console.log(typeof (value1 - value2));
+// console.log(value1 - value2); // is ne automatically value to coerce(convert) kardiya hai
+// console.log(typeof (value1 - value2));
 
 // ...............................................
 
@@ -171,3 +181,162 @@ console.log(typeof (value1 - value2));
 
 // Falsy values: 0, "", false, null, undefined, NaN, documented.all
 // Truthy values: falsy values k ilawa sab truthy values hain
+
+// ....................................................
+
+// 2. Datatypes + Types Systems
+// Common Confusion?
+
+// Why NaN is a number?
+// NaN JS mein aik failed number operation hai jab number k saath koi non-number ka operation hoga to woh failed number operation hoga NaN
+
+// ...................................................
+
+// null vs undefined?
+// null: aik value hai jo k stand-alone value/empty value(value hai but khali hai)
+// undefined: jab hum variable ko value assign nahi karte to woh jo by default value deta hai woh value undefined hoti
+
+// ...................................................
+
+// Why "5" + 1 => 51 & "5" - 1 => 4
+// "+" operator ka JS mein 2 kaam hain aik plus/addition karna aur dusra concatenation(2 values ko jorna) karna
+// "-" operator ka JS mein 1 hi kaam hai minus/subtraction karne ka to is wajah se yeh string ko behind the scene coerce karta hai hai operation karta hai
+
+/////////////////////////////////////////////////////////////////
+
+// Operators
+
+// Arithmetic: +, -, *, /, %, **
+
+// +: Plus Operator JS mein 2 kaam karta hai string ko jorne(contenation) ka kaam aur 2 operands ko add karne ka kaam karta hai
+// console.log("Hashim" + 4);
+
+// **: Exponentiation Operator JS mein power ka kaam karta hai like (3 to the power of 2) => (3 ** 2) => 9
+// console.log(3 ** 2); // 9
+
+// %: Modulus Operator JS mein yeh kaam karta hai k do value k divide hone k baad jo remainder bachay woh modulus hota hai
+// console.log(5 % 2); // 0
+
+// Note: Baqi sab arithmetic operators same kaam karte hain jaisa k maths mein hota hai
+
+//.....................................
+
+// Comparison: ==, ===, !=, !==, <, >, <=, >=
+
+// ==:
+
+//////////////////
+
+// Comparison: ==, ===, !=,!==, >, <, >= , <=
+
+// ==: yeh sirf value check karta hai like
+// console.log(2 == '2'); // true because yeh behind the scene automatically type convert(coerce) karta hai
+
+// ===: yeh value aur type dono check karta hai like
+// console.log(2 === '2'); // false because aik number hai aur aik string hai
+
+// !=: yeh not loose equality operator hai jo check karta hai k value bara nahi hai like:
+// console.log(3 != '3'); // false
+
+// !==: yeh not strict equality operator hai jo check karta hai k value aur type eqaul hai ya nahi like:
+// console.log(2 !== '2'); // true
+
+// Note: Baqi sab comparison operator same kaam karte hain jaise Maths mein karte hain
+
+/////////////////////
+
+// Assignment: =, +=, -=, *=, /=, %=,
+// =: Assignment operator yeh aik value ko variable mein value ko assign karta hai like let a = 5 ab a ko 5 assign kardiya hai
+// let a = 5;
+
+// a += 2 // (a = a + 2 ka short hand hai) yeh a mein w ko plus karta hai aur a ko update karta hai
+// console.log(a)
+
+// Note: baqi sab bhi same kaam karte hain jaise += kar raha hai
+
+//////////////////
+
+// Logical: &&, ||, !
+
+// &&: AND Operator hai jo jab sab values true hongi to true return karega aur agar jab aik bhi false hogai to false return karega
+// console.log(true && true) // true
+// console.log(false && true) // false
+// console.log(true && false) // false
+// console.log(false && false) // false
+
+// ............
+
+// ||: OR Operator yeh jab aik value bhi true hoto true return karega aur aagr sab values false hoto false return karega like
+// console.log(true || true) // true
+// console.log(false || true) // true
+// console.log(true || false) // true
+// console.log(false || false) // false
+
+// ..................
+
+// !: NOT Operator yeh karta hai ja value true hoto false return karo aur agar false hoto true return karo like
+// console.log(!true) // false
+// console.log(!false) // true
+// console.log(!0) // true
+// console.log(!1) // false
+
+/////////////////////
+
+// Unary: Unary Operator woh operator hai jo k aik hi operand pe kaam karta hai like
+// let b = '5'
+// console.log(+b) // ab yeh aik hi operand pe kaam kar raha hai
+// console.log(-b) // yeh bhi
+
+let c = 2;
+// console.log(c++) // post increment
+// console.log(++c) // pre increment
+// console.log(c--) // pre decrement
+// console.log(--c) // post decrement
+
+// post baad mein incre/decre karo pehle purani value ko return karo aur pre incre/decre mein pehle plus/minus karo aur saath mein return karo
+
+// ..............
+
+// typeof: typeof aik operator hai jo k value ki type batata hai like console.log(typeof 5)
+// console.log(typeof 5) // number
+// console.log(typeof 'Hashim') // string
+// console.log(typeof true) // boolean
+// console.log(typeof null) // object yej JS mein error/bug hai
+
+// !: Logical NOT bhi aik unary operator hai yeh true ko false return karta hai aur false ko true return karta hai
+
+// console.log(!true) // false
+// console.log(!false) // true
+// console.log(!0) // true
+// console.log(!1) // false
+
+// instanceof: yeh bhi aik operator hai jo k yeh check karta hai k non-primitive values ka type ya nahi like let a = {}
+
+/*
+ let a = {}
+console.log(a instanceof Object) // true
+
+ let b = []
+console.log(b instanceof Array) // true
+
+let d = () => {
+  console.log('Function')
+}
+d()
+console.log(d instanceof Function)
+// true
+
+// Note: its only worked on non-primitive/reference type
+*/
+
+// Bonus concept: !!0
+// yeh value ka truthy ya falsy nature banate k liye ue hota hai
+// console.log(!!0);
+// console.log(!!1);
+
+// Practice Question
+
+// const marks = 50;
+
+// const result = marks >= 90 ? "A+" : "Fail";
+// console.log(result);
