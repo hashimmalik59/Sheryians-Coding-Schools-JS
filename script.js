@@ -464,3 +464,108 @@ console.log(d instanceof Function)
 //   default:
 //     console.log("Weekend");
 // }
+
+////////////////////////////////////////////////////
+
+// Loop
+// Code ko repeat karne ko hum loop kehte hain
+
+// Kahan se jana hai => Kahan tak jaana hai => Kaise jaana hai
+// for loop
+
+// 1-50 (for loop)
+// 25-30 (for loop)
+
+// initialization; let i = 1
+// condition; i > 51
+// updation; i++
+
+// for (intialization; condition; updation) {
+//   console.log("Print Here");
+// }
+
+// for (let i = 1; i < 51; i++) {
+//   console.log(i);
+// }
+
+// Kahan se jaana hai => Kab tak rukna hai => Kaise jaana hai
+// while loop
+
+//.....................................................
+
+// tab tak chalna jab tak "hello" na aajaye (while loop)
+// tab tak soo jab tak alarm na baj jaye (while loop)
+
+// initialization
+// while (condition) {
+//   console.log("Print Here");
+// Updation
+// }
+
+// let i = 1;
+// while (i < 10) {
+//   console.log(i);
+//   i++;
+// }
+
+//........................................
+
+// do-while
+// at least aik baar to chalo beshak condition false hi kyun na ho
+
+// intialization
+// do {
+// console.log("Print Here");
+// Updation
+// } while (condition);
+
+// let i = 30;
+// do {
+//   console.log(i); // condition false hogai but aik baar chala zaroor
+//   i++;
+// } while (i < 10);
+
+//........................................
+
+// for (let i = 0; i < 10; i++) {
+//   if (i === 4) {
+//     // break; // specific condition pe jaa kar stop kardeta hai aur diya gaya number inclusive hai
+//     continue; // continue matlab di gai condtion par rukna mat aur usko chor kar aage jaari rakhna
+//   }
+//   console.log(i);
+// }
+
+// Practice Questions
+
+// 1. Print numbers from 1 to 10 using for loop
+// for (let i = 1; i < 11; i++) {
+//   console.log(i);
+// }
+
+// 2. Print the number from 10 to 1 using while loop
+// let i = 10;
+// while (i > 0) {
+//   console.log(i);
+//   i--;
+// }
+
+// 3. Print even number from 1 to 20 using for loop
+// for (let i = 0; i < 21; i++) {
+//   if (i % 2 === 0) {
+//     console.log(`${i}: Even Number!`);
+//   }
+// }
+
+// 4. Print odd number 1 to 15 using while loop
+// let i = 1;
+// while (i < 16) {
+//   if (i % 2 !== 0) {
+//     console.log(i);
+//   }
+//   i++;
+// }
+
+// // 5. Print the multiplication table of 5
+// for (let i = 5; i < 55; i += 5) {
+//   console.log(`${i}`);
+// }
