@@ -340,3 +340,127 @@ console.log(d instanceof Function)
 
 // const result = marks >= 90 ? "A+" : "Fail";
 // console.log(result);
+
+////////////////////////////////////////////////////////////////////
+
+// Control Flow
+
+// if else / else-if
+
+// if: jab condition true hojaye to yeh block return karo
+// else: agar if ki condition false hojaye to else chala do
+
+// else-if: jab hamare paas mutliple conditions ho to hum else-if use karta hain
+
+// const age = 10;
+
+// if (age >= 18) {
+//   // jab yeh condition true hogi to yeh chalay gi aur agar yeh condition false hogi to else chalay gi
+//   console.log(`Adult due to ${age}`);
+// } else {
+//   console.log(`Not Adult due to ${age}`);
+// }
+
+// Mutiple conditions
+// const marks = 99;
+// let grade;
+// if (marks <= 100 && marks >= 90) {
+//   grade = "A";
+// } else if (marks <= 89 && marks >= 80) {
+//   grade = "B";
+// } else if (marks <= 79 && marks >= 70) {
+//   grade = "C";
+// } else if (marks <= 69 && marks >= 60) {
+//   grade = "D";
+// } else if (marks <= 59 && marks >= 50) {
+//   grade = "E";
+// } else if (marks <= 49 && marks >= 0) {
+//   grade = "FAIL!";
+// } else {
+//   console.log("INVALID MARKS");
+// }
+// console.log(grade);
+
+//...................................................
+
+// Switch Case: yeh bhi aik control structure jo k kisi expression/value ko multiple possible values k against compare karta hai, usay multiple predefined cases ke against match karta hai, and yeh alternate hai if-else-if chain yeh short and cleaner version hai else-if ka
+
+// switch ("1") {
+//   case 1:
+//     console.log(1);
+//     break; // break ek control flow keyword hai jo kisi loop ya switch block se forcibly bahar nikalne ke liye use hota hai.
+//   case 2:
+//     console.log(2);
+//     break;
+//   case 3:
+//     console.log(3);
+//     break;
+//   default: // yeh jab koi condition true naho tab yeh chalega like else
+//     console.log("default == else");
+// }
+// // Note: Yeh Strict Equality === par chalta hai
+
+//........................................................
+
+// Early return pattern: Galat ya special conditions ko start me hi handle kar lo, taake baaki code simple aur seedha ho.
+
+// function checkMarks(marks) {
+//   if (marks < 25) return "D";
+//   else if (marks < 50) return "C";
+//   else if (marks < 75) return "B";
+//   else return "A";
+// }
+// console.log(checkMarks(56));
+
+// Pratice Exercise
+
+// Write a function getGrade(score) that:
+// Takes student marks (0 to 100)
+// return the grade based on logic:
+
+// function getGrade(score) {
+//   if (score <= 100 && score >= 90) return "A+";
+//   else if (score <= 89 && score >= 80) return "B";
+//   else if (score <= 79 && score >= 70) return "C";
+//   else if (score <= 69 && score >= 60) return "D";
+//   else if (score <= 59 && score >= 50) return "E";
+//   else if (score <= 49 && score >= 0) return "Fail";
+//   else return "INVALID";
+// }
+// console.log(getGrade(75));
+
+// Rock-Paper-Scissor Game
+// function rockPaperScissor(userTurn, computerTurn) {
+//   if (userTurn === computerTurn) return "Draw";
+//   else if (userTurn === "Rock" && computerTurn === "Scissor") return "User";
+//   else if (userTurn === "Paper" && computerTurn === "Rock") return "User";
+//   else if (userTurn === "Scissor" && computerTurn === "Paper") return "User";
+//   else return "Computer";
+// }
+// const gameResult = rockPaperScissor("Scissor", "Paper");
+// console.log(gameResult);
+
+// Common Confusion:
+// Control Flow:
+// Fall-through in switch case
+
+// const workingDays = "thur";
+// switch (workingDays) {
+//   case "mon":
+//     console.log("Monday");
+// break; // agar hum ne "break" keyword use na kiya to woh tab tak chale ga jab tak agla "break" keyword na aajaye aur default se oopar wale case mein chala to phir default bhi saath hi chalega
+//   case "tue":
+//     console.log("Tuesday");
+//     break;
+//   case "wed":
+//     console.log("Wednesday");
+//     break;
+//   case "thur":
+//     console.log("Thursday");
+//     break;
+//   case "fri":
+//     console.log("Friday");
+//     break;
+//   default:
+//     console.log("Weekend");
+// }
