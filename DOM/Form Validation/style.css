@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    background-color: #212121;
+    color: #fff;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input,
+select,
+textarea {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 20vw;
+    min-width: 300px;
+    /* min-width: k is specific width se neeche nahi jana like 300px se neeche nahi ja sakta max-width: 300px;
+    max-width: k is specific width se upar nahi jana like 300px se upar nahi ja sakta */
+}
+
+
+option {
+    color: #000;
+}
+
+textarea {
+    height: 30vh;
+}
+
+.hide-name {
+    display: none;
+}

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #212121;
+    color: #fff;
+}
+
+.main {
+    margin: 20px;
+}
+
+.card {
+    border: 1px solid #d1d1d1;
+    height: 35vh;
+    width: 35vh;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px 0 0 0;
+}
+
+.profile img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+      }
+      html,
+      body {
+        background-color: #212121;
+        color: #fff;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 16px;
+      }
+      input {
+        background-color: transparent;
+        color: #fff;
+        padding: 10px 20px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Write something here" />
+    <h1>Character length: <span>20</span></h1>
+  </body>
+  <script>
+    // Accessing Element
+    const input = document.querySelector("input");
+    const span = document.querySelector("span");
+
+    input.addEventListener("input", function () {
+      // Logic of Character counter
+      let charactersLeft = 20;
+      const length = input.value.length; // Length of
+      // Character
+      const character = input.value; // Character
+
+      const remaining = charactersLeft - length;
+      span.textContent = remaining;
+      if (remaining < 0) {
+        span.style.color = "red";
+      } else {
+        span.style.color = "white";
+      }
+    });
+
+    // Common Confusion
+
+    // 1. Event vs Listener
+
+    // Event => yani konsa event hai like: click, mousemove, submit, input, change etc
+    // Listener => yani woh callBack(function) jo kuch karega event trigger hone k baad
+
+    // 2. Capturing vs Bubbling
+
+    // Capturing = > Phase 1 hai but by default disable hota hai, true keyword leta hai last paramter enable karne k liye, top to bottom kaam karta hai like: grandParent se propagate hote huwe parent phir child
+
+    // Bubbling Pahse 2 hai by default use hota hai third paramter pe false laga hoto use hota hai but normally false na bhi hoto false hi consider hota hai, bottom to top kaam karta hai like: child se propagate ho k parent and then grandParent pe propagate hota
+  </script>
+</html>
